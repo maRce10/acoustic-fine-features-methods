@@ -11,3 +11,9 @@ data/raw/degrad_playback_oct21/4CH005I_20m_playback.wav
 data/raw/degrad_playback_oct21/4CH002I_1meter_21Oct.wav
 data/raw/degrad_playback_oct21/extended_sel_table_degradation_exp_21_oct.RDS
 data/raw/degradation_experiment/mean_schroeders_adjusted_snr.RDS
+data/processed/200ms_schroeders_adjusted_snr.RDS
+data/processed/200ms_schroeders_adjusted_snr_pink_noise.RDS
+data/processed/200ms_schroeders_adjusted_snr_white_noise.RDS
+data/processed/mean_schroeders_adjusted_snr.RDS
+data/processed/single_schroeder_adjusted_snr_white_noise.RDS
+data/raw/zoom_amd64.deb
