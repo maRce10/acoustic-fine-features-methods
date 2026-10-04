@@ -1,0 +1,35 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - index.qmd
+    - scripts/1_schroeder_synthesis_and_method_comparison.qmd
+    - scripts/2_background_noise_effect.qmd
+
+execute:
+  freeze: auto
+
+website:
+  title: "Acoustic fine structure quantification"
+  site-url: https://marce10.github.io/acoustic-fine-features-zebra-finch/
+  repo-url: https://github.com/maRce10/acoustic-fine-features-zebra-finch
+  page-navigation: true
+  navbar:
+    background: "#ffffff"
+    foreground: "#408AB4"
+    left:
+      - href: index.qmd
+        text: Home
+      - href: scripts/1_schroeder_synthesis_and_method_comparison.qmd
+        text: Method comparison
+      - href: scripts/2_background_noise_effect.qmd
+        text: Background noise
+    right:
+      - icon: github
+        href: https://github.com/maRce10/acoustic-fine-features-zebra-finch
+        aria-label: GitHub repository
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
