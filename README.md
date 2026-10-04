@@ -1,12 +1,20 @@
 # Waveform-based acoustic analysis is sensitive to acoustic fine structure to a similar degree as birds, while traditional techniques are not
 
+[![Website](https://img.shields.io/badge/website-analysis%20reports-408AB4)](https://marce10.github.io/acoustic-fine-structure-methods/)
+[![Publish website](https://github.com/maRce10/acoustic-fine-structure-methods/actions/workflows/publish.yml/badge.svg)](https://github.com/maRce10/acoustic-fine-structure-methods/actions/workflows/publish.yml)
+
 Code and data to reproduce the analyses and figures of:
 
 > McLean C. R., Odom K. J., Araya-Salas M., Prior N. H. *Waveform-based acoustic analysis is sensitive to acoustic fine structure to a similar degree as birds, while traditional techniques are not.* (under review)
 
 We compare nine acoustic structure quantification methods (warbleR, Raven Pro and Sound Analysis Pro) for their ability to detect phase differences in synthesized Schroeder-phase harmonic complexes, and evaluate the two waveform-based methods (waveform correlation and waveform DTW) under decreasing signal-to-noise ratios.
 
-The rendered analysis reports are available at **https://marce10.github.io/acoustic-fine-structure-methods/**
+## Website
+
+The rendered analysis reports, with all code, results and figures, are available at **[marce10.github.io/acoustic-fine-structure-methods](https://marce10.github.io/acoustic-fine-structure-methods/)**:
+
+- [Method comparison](https://marce10.github.io/acoustic-fine-structure-methods/scripts/1_schroeder_synthesis_and_method_comparison.html): Schroeder synthesis, acoustic measurements and matrix regression models (Table 1, Figs. 1–6)
+- [Background noise](https://marce10.github.io/acoustic-fine-structure-methods/scripts/2_background_noise_effect.html): waveform similarity across signal-to-noise ratios (Fig. 7)
 
 ## Repository structure
 
