@@ -6,7 +6,7 @@ Code and data to reproduce the analyses and figures of:
 
 We compare nine acoustic structure quantification methods (warbleR, Raven Pro and Sound Analysis Pro) for their ability to detect phase differences in synthesized Schroeder-phase harmonic complexes, and evaluate the two waveform-based methods (waveform correlation and waveform DTW) under decreasing signal-to-noise ratios.
 
-The rendered analysis reports are available at **https://marce10.github.io/acoustic-fine-features-zebra-finch/**
+The rendered analysis reports are available at **https://marce10.github.io/acoustic_fine_structure_methods/**
 
 ## Repository structure
 
@@ -45,7 +45,7 @@ output/
 
 ## Reproducing the analyses
 
-Open `acoustic_fine_features_methods.Rproj` and run the Quarto documents in `scripts/` in order. Paths are relative to the project root. The website is built by GitHub Actions on every push to `master`. The workflow does not run R: it uses the results stored in `_freeze/`. After editing a `.qmd` file, render it locally (`quarto render`) and commit the updated `_freeze/` folder.
+Open `acoustic_fine_structure_methods.Rproj` and run the Quarto documents in `scripts/` in order. Paths are relative to the project root. The website is built by GitHub Actions on every push to `master`. The workflow does not run R: it uses the results stored in `_freeze/`. After editing a `.qmd` file, render it locally (`quarto render`) and commit the updated `_freeze/` folder.
 
 - Random steps are seeded: `set.seed(123)` before every `MRM2()` call (permutation p-values) and `seed = i` (the target SNR) in `baRulho::add_noise()`. All model fits in `data/processed/` were produced with these seeds.
 - Waveform correlation and waveform DTW are computed with `warbleR::waveform_similarity()` (`type = "sliding"`, `n = 100`) on both single-cycle and repeated-cycle Schroeders.
