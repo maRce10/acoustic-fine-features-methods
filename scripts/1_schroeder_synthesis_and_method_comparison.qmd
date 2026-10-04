@@ -1452,9 +1452,10 @@ ggsave(
 
 # Takeaways
 
-- Waveform correlation works better at getting periodicity 
-- Dynamic time warping dissimilarity on mean periods, Raven's waveform correlation and (to some extent) Fourier cross-correlation did capture phase differences in Schroeders
-- Raven waveform correlation remove differences in frequency when forcing all periods to have the same number of values (i.e. same length)
+- Only waveform-based methods detected phase differences between Schroeders: waveform correlation (warbleR, single cycle: effect size 0.786; Raven, repeated cycle: 0.119; warbleR, repeated cycle: 0.104) and waveform DTW (warbleR, single cycle: 0.561; repeated cycle: 0.022)
+- None of the spectrogram-based methods (spectro-temporal features, MFCC descriptors, linear and Mel frequency spectrogram cross-correlation) or Sound Analysis Pro measures detected phase differences (all effect sizes between -0.005 and 0.011, p >= 0.05)
+- Both waveform methods were much more sensitive to phase when applied to a single cycle than to repeated cycles
+- Most methods detected differences in fundamental frequency and number of harmonics. Single-cycle waveform methods were nearly insensitive to fundamental frequency (DTW: 0.004, p >= 0.05; correlation: -0.036), as resampling each cycle to 100 samples removes differences in period length
 
 </div>
 
@@ -1750,11 +1751,9 @@ lines(x = seq_along(clp_call@left), clp_call@left, col = mako(10)[8], lwd = 2.4)
 
 text(x = 5, y = max(clp_call@left) * 0.9, labels = "d", cex = cx + 1)
 
-at <- seq(0, length.out = 5, by = 0.2 * length(sil_wv_200ms_1@left))
-
 labs <- seq(0, duration(clp_call), by = 0.001)
 
-at <- labs * sil_wv_200ms_1@samp.rate 
+at <- labs * clp_call@samp.rate
 
 labs <- round(labs * 1000, 2)
 

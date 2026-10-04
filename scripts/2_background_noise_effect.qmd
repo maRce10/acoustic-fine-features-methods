@@ -700,7 +700,11 @@ ggsave(
 
 # Takeaways
 
-- 
+- Waveform correlation outperformed waveform DTW at every signal-to-noise ratio (SNR), for both single-cycle and repeated-cycle Schroeders
+- Single cycles gave much larger phase effects than repeated cycles at all noise levels (correlation: 0.216 vs 0.012 at 30 dB SNR; DTW: 0.057 vs 0.0015)
+- Phase effects on single cycles drop as noise increases but remain detectable down to 1 dB SNR (correlation: 0.030; DTW: 0.009; p < 0.05 at all 30 SNR levels). Single-cycle correlation reaches 90% of its noise-free plateau at about 10 dB SNR, and single-cycle DTW at about 12 dB
+- On repeated cycles, waveform correlation detected phase at all SNR levels, but with very small effect sizes (0.005–0.012); waveform DTW effects were negligible (≤ 0.0015) and significant at only 10 of the 30 SNR levels
+- Analyzing single periods with waveform correlation is the most noise-robust option for quantifying acoustic fine structure
 
 </div>
 
