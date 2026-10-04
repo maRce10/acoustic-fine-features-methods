@@ -11,7 +11,8 @@ The rendered analysis reports are available at **https://marce10.github.io/acous
 ## Repository structure
 
 ```
-_quarto.yml, index.qmd, styles.css                 Quarto website configuration (rendered site in docs/, cached results in _freeze/)
+_quarto.yml, index.qmd, styles.css                 Quarto website configuration (cached code results in _freeze/)
+.github/workflows/publish.yml                      GitHub Actions workflow that builds the website and deploys it to GitHub Pages
 scripts/
   1_schroeder_synthesis_and_method_comparison.qmd  Schroeder synthesis, acoustic measurements, MRM models (Table 1, Figs. 1-6)
   2_background_noise_effect.qmd                    White noise addition and waveform similarity across SNR (Fig. 7)
@@ -44,7 +45,7 @@ output/
 
 ## Reproducing the analyses
 
-Open `acoustic_fine_features_methods.Rproj` and run the Quarto documents in `scripts/` in order. Paths are relative to the project root. To rebuild the website run `quarto render` in the project root (output goes to `docs/`, which is served by GitHub Pages).
+Open `acoustic_fine_features_methods.Rproj` and run the Quarto documents in `scripts/` in order. Paths are relative to the project root. The website is built by GitHub Actions on every push to `master`. The workflow does not run R: it uses the results stored in `_freeze/`. After editing a `.qmd` file, render it locally (`quarto render`) and commit the updated `_freeze/` folder.
 
 - Random steps are seeded: `set.seed(123)` before every `MRM2()` call (permutation p-values) and `seed = i` (the target SNR) in `baRulho::add_noise()`. All model fits in `data/processed/` were produced with these seeds.
 - Waveform correlation and waveform DTW are computed with `warbleR::waveform_similarity()` (`type = "sliding"`, `n = 100`) on both single-cycle and repeated-cycle Schroeders.

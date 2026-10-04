@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: docs
+  output-dir: _site
   render:
     - index.qmd
     - scripts/1_schroeder_synthesis_and_method_comparison.qmd

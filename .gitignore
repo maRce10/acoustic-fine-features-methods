@@ -5,7 +5,11 @@
 desktop.ini
 /.quarto/
 
-# rendered reports outside the website folder (docs/ is the published site)
+# rendered website (built and deployed by .github/workflows/publish.yml)
+/_site/
+/docs/
+
+# rendered reports outside the website folder
 /scripts/*.html
 /scripts/*_files/
 
