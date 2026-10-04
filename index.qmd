@@ -22,4 +22,4 @@ This site contains the analyses behind the manuscript (under review). We compare
 
 ## Reproducibility
 
-All code and data are available in the [GitHub repository](https://github.com/maRce10/acoustic_fine_structure_methods). See the repository README for the folder structure and for details on files too large to be hosted on GitHub.
+All code and data are available in the [GitHub repository](https://github.com/maRce10/acoustic-fine-structure-methods). See the repository README for the folder structure and for details on files too large to be hosted on GitHub.

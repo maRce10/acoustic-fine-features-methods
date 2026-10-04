@@ -11,8 +11,8 @@ execute:
 
 website:
   title: "Acoustic fine structure quantification"
-  site-url: https://marce10.github.io/acoustic_fine_structure_methods/
-  repo-url: https://github.com/maRce10/acoustic_fine_structure_methods
+  site-url: https://marce10.github.io/acoustic-fine-structure-methods/
+  repo-url: https://github.com/maRce10/acoustic-fine-structure-methods
   page-navigation: true
   navbar:
     background: "#ffffff"
@@ -26,7 +26,7 @@ website:
         text: Background noise
     right:
       - icon: github
-        href: https://github.com/maRce10/acoustic_fine_structure_methods
+        href: https://github.com/maRce10/acoustic-fine-structure-methods
         aria-label: GitHub repository
 
 format:

@@ -6,7 +6,7 @@ Code and data to reproduce the analyses and figures of:
 
 We compare nine acoustic structure quantification methods (warbleR, Raven Pro and Sound Analysis Pro) for their ability to detect phase differences in synthesized Schroeder-phase harmonic complexes, and evaluate the two waveform-based methods (waveform correlation and waveform DTW) under decreasing signal-to-noise ratios.
 
-The rendered analysis reports are available at **https://marce10.github.io/acoustic_fine_structure_methods/**
+The rendered analysis reports are available at **https://marce10.github.io/acoustic-fine-structure-methods/**
 
 ## Repository structure
 
