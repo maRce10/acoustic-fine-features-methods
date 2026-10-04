@@ -2270,7 +2270,7 @@ dev.off()
 
 ```{r session info, echo=F}
 
-devtools::session_info()
+sessionInfo()
 ```
 
 

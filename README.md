@@ -71,6 +71,17 @@ Two intermediate files with the noise-added Schroeders exceed GitHub's file size
 
 They can be regenerated with the "Add synthetic noise" chunks in `scripts/2_background_noise_effect.qmd` (noise is random, so values will differ slightly). The downstream waveform similarity data and model fits used in Fig. 7 are included.
 
+## R package versions
+
+`renv.lock` records the R version (4.6.1) and the exact versions of all packages used (including GitHub commits for baRulho and PhenotypeSpace). To install them in a project library:
+
+```r
+install.packages("renv")
+renv::restore()
+```
+
+The lockfile is only used when you call `renv::restore()`; opening the project does not activate renv.
+
 ## Main R packages
 
 warbleR (v1.1.35+, includes `waveform_similarity()`), baRulho (v2.1.5), ecodist, PhenotypeSpace (`github: maRce10/PhenotypeSpace`), Rraven, seewave, tuneR, dtw, ggplot2, viridis. Packages are loaded with `sketchy::load_packages()` at the start of each document.

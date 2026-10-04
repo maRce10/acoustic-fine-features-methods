@@ -129,8 +129,6 @@ print(i)
  return(est_schr_adj)
 })
 
-beepr::beep(2)
-
 saveRDS(adj_snr_schroeder_white, "./data/processed/200ms_schroeders_adjusted_snr_white_noise.RDS")
 ```
 
@@ -151,8 +149,6 @@ print(i)
  est_schr_adj$target.snr <- i
  return(est_schr_adj)
 })
-
-beepr::beep(2)
 
 saveRDS(adj_snr_schroeder_white, "./data/processed/single_schroeder_adjusted_snr_white_noise.RDS")
 
@@ -296,8 +292,6 @@ dist_white_noise <- lapply(adj_snr_schroeder, function(schroeders) {
 })
 
 
-beepr::beep(2)
-
 saveRDS(dist_white_noise, "./data/processed/waveform_similarity_adjusted_snr_200ms_schroeders_white_noise.RDS")
 
 ```
@@ -341,8 +335,6 @@ dist_white_noise <- lapply(adj_snr_schroeder, function(schroeders) {
     
     return(dtw_dist)
 })
-
-beepr::beep(2)
 
 saveRDS(dist_white_noise, "./data/processed/waveform_similarity_adjusted_snr_single_schroeder_white_noise.RDS")
 
