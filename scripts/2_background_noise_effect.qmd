@@ -42,7 +42,9 @@ knitr::opts_chunk$set(
   class.source = "numberLines lineAnchors", # for code line numbers
   tidy.opts = list(width.cutoff = 65),
   tidy = TRUE,
-  message = FALSE
+  message = FALSE,
+  dpi = 150, # with fig.retina = 2 (default) plots are saved at 300 dpi
+  fig.retina = 2
 )
 
 knitr::opts_knit$set(root.dir = "..")
@@ -175,7 +177,7 @@ rep_examples <- data.frame(
 )
 
 for (e in seq_len(nrow(rep_examples))) {
-    png(file.path("./output/figures/snr_examples", paste0(rep_examples$name[e], ".png")), width = 3000, height = 1800, res = 200)
+    png(file.path("./output/figures/snr_examples", paste0(rep_examples$name[e], ".png")), width = 4500, height = 2700, res = 300)
     par(mar = c(0, 0, 0, 0), mfrow = c(5, 6))
     for (i in 1:30) {
         warbleR:::spectro_wrblr_int(
@@ -219,7 +221,7 @@ sngl_examples <- data.frame(
 )
 
 for (e in seq_len(nrow(sngl_examples))) {
-    png(file.path("./output/figures/snr_examples", paste0(sngl_examples$name[e], ".png")), width = 3000, height = 1800, res = 200)
+    png(file.path("./output/figures/snr_examples", paste0(sngl_examples$name[e], ".png")), width = 4500, height = 2700, res = 300)
     par(mar = c(0, 0, 0, 0), mfrow = c(5, 6))
     for (i in 1:30) {
         wv <- read_sound_file(adj_snr_schroeder[[i]], sngl_examples$index[e])@left

@@ -44,7 +44,9 @@ knitr::opts_chunk$set(
   class.source = "numberLines lineAnchors", # for code line numbers
   tidy.opts = list(width.cutoff = 65),
   tidy = TRUE,
-  message = FALSE
+  message = FALSE,
+  dpi = 150, # with fig.retina = 2 (default) plots are saved at 300 dpi
+  fig.retina = 2
 )
 
 knitr::opts_knit$set(root.dir = "..")
