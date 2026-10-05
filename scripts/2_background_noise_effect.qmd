@@ -101,7 +101,7 @@ style D fill:#FDE7254D
 
 ### Add synthetic noise
 
-The noise-added Schroeders are saved as lists of 30 extended selection tables (one per signal-to-noise ratio). These files are too large for GitHub, but they can be regenerated with the code below from the extended selection tables and master sound file included in the repository (`data/processed/`). Extended selection tables store the sounds inside the R object, so no other sound files are needed. The waveform similarity values and model fits computed from them are included in the repository.
+The full noise analysis can be rerun from the extended selection tables and master sound file included in the repository (`data/processed/`); extended selection tables store the sounds inside the R object, so no other sound files are needed. The noise-added sounds created by the code below (lists of 30 extended selection tables, one per signal-to-noise ratio) are not stored on GitHub because of their size (1.1 GB and 292 MB). The waveform similarity values and model fits computed from them are included in the repository.
 
 #### Repeated Schroeders
 ```{r, eval = FALSE}

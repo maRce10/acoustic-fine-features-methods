@@ -62,21 +62,18 @@ Open `acoustic_fine_structure_methods.Rproj` and run the Quarto documents in `sc
 - Raven Pro (v1.6.5) and Sound Analysis Pro measurements were made outside R; their outputs are included in `data/processed/` and `data/raw/`.
 - Fig. 5 is assembled from the two panels created by the code (`fig5a_*`, `fig5b_*`) into `fig5_schroeder_representations_combined.png` outside R.
 
-### Large files not included in the repository
+### Background noise analysis (Fig. 7)
 
-Two intermediate files with the noise-added Schroeders exceed GitHub's file size limit and are not tracked:
+The full noise analysis can be rerun from the extended selection tables in the repository (`scripts/2_background_noise_effect.qmd`):
 
-- `data/processed/200ms_schroeders_adjusted_snr_white_noise.RDS` (1.1 GB)
-- `data/processed/single_schroeder_adjusted_snr_white_noise.RDS` (292 MB)
+1. Start from the clean Schroeders: `data/processed/200ms_schroeder_master.wav` with its annotations (`data/processed/200ms_schroeders.txt`) for repeated cycles, and `data/processed/extended_selection_table_single_schroeders.RDS` for single cycles. Extended selection tables store the sounds inside the R object, so no other sound files are needed.
+2. Add white noise at 30 signal-to-noise ratios (1–30 dB) with `baRulho::add_noise()`
+3. Measure waveform similarity at each signal-to-noise ratio
+4. Fit the matrix regression models and plot Fig. 7
 
-The downstream waveform similarity data and model fits used in Fig. 7 are included, so Fig. 7 can be reproduced without these files.
+The noise-added sounds created in step 2 (`data/processed/200ms_schroeders_adjusted_snr_white_noise.RDS`, 1.1 GB, and `data/processed/single_schroeder_adjusted_snr_white_noise.RDS`, 292 MB) are not stored on GitHub because of their size. The outputs of steps 3 and 4 are included, so Fig. 7 can also be reproduced directly from them.
 
-Both files are lists of 30 warbleR extended selection tables (one per signal-to-noise ratio, 1–30 dB) and can be regenerated from the extended selection tables included in the repository, using the "Add synthetic noise" chunks in `scripts/2_background_noise_effect.qmd`:
-
-- Repeated-cycle Schroeders: built from `data/processed/200ms_schroeder_master.wav` and its annotations (`data/processed/200ms_schroeders.txt`)
-- Single-cycle Schroeders: built from `data/processed/extended_selection_table_single_schroeders.RDS`
-
-Extended selection tables store the sounds inside the R object, so no other sound files are needed. Noise is now added with a fixed seed (`seed = i`), so regenerated files are identical across runs; the original files were created before seeding, so waveform similarity values computed from regenerated files will differ slightly from those stored in the repository.
+Noise is now added with a fixed seed (`seed = i`), so reruns are identical to each other. The noise used for the paper was added before seeding, so a full rerun gives waveform similarity values very close to, but not exactly the same as, those stored in the repository.
 
 ## R package versions
 
