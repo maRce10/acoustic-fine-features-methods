@@ -1,5 +1,5 @@
 <script>
-// Add a "Download (300 dpi)" button below every figure in the page content.
+// Add a "Download" button below every figure in the page content.
 // The button links to the figure's image file (all figures are saved at 300 dpi).
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll("main img").forEach(function (img) {
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link.href = src;
     link.setAttribute("download", fileName);
     link.className = "btn btn-outline-primary btn-sm";
-    link.innerHTML = '<i class="bi bi-download"></i> Download (300 dpi)';
+    link.innerHTML = '<i class="bi bi-download"></i> Download';
     link.title = "Download " + fileName;
 
     var wrapper = document.createElement("div");
