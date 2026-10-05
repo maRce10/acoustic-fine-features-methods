@@ -69,7 +69,14 @@ Two intermediate files with the noise-added Schroeders exceed GitHub's file size
 - `data/processed/200ms_schroeders_adjusted_snr_white_noise.RDS` (1.1 GB)
 - `data/processed/single_schroeder_adjusted_snr_white_noise.RDS` (292 MB)
 
-They can be regenerated with the "Add synthetic noise" chunks in `scripts/2_background_noise_effect.qmd` (noise is random, so values will differ slightly). The downstream waveform similarity data and model fits used in Fig. 7 are included.
+The downstream waveform similarity data and model fits used in Fig. 7 are included, so Fig. 7 can be reproduced without these files.
+
+Both files are lists of 30 warbleR extended selection tables (one per signal-to-noise ratio, 1–30 dB) and can be regenerated from the extended selection tables included in the repository, using the "Add synthetic noise" chunks in `scripts/2_background_noise_effect.qmd`:
+
+- Repeated-cycle Schroeders: built from `data/processed/200ms_schroeder_master.wav` and its annotations (`data/processed/200ms_schroeders.txt`)
+- Single-cycle Schroeders: built from `data/processed/extended_selection_table_single_schroeders.RDS`
+
+Extended selection tables store the sounds inside the R object, so no other sound files are needed. Noise is now added with a fixed seed (`seed = i`), so regenerated files are identical across runs; the original files were created before seeding, so waveform similarity values computed from regenerated files will differ slightly from those stored in the repository.
 
 ## R package versions
 
